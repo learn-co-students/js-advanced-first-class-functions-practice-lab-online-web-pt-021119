@@ -18,3 +18,18 @@ function driversByRevenue(arr){
   });
   return newArr;
 }
+
+function driversByName(arr){
+  const newArr = [...arr].sort(function(a, b) {
+    return a.name.localeCompare(b.name);
+  });
+  return newArr;
+}
+
+function totalRevenue(arr){
+  return arr.reduce(function (agg, el, i, array) { return agg + el.revenue; }, 0);
+}
+
+function averageRevenue(arr){
+  return (arr.reduce(function (agg, el, i, array) { return agg + el.revenue; }, 0) / arr.length);
+}
